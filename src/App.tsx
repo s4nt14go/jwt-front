@@ -2,8 +2,15 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header";
 import styles from "./App.module.css";
+import { useFormFields } from "./libs/hooks";
 
 function App() {
+
+  const [fields, handleFieldChange] = useFormFields({
+    account: 'account',
+    textarea: 'textarea',
+  });
+
   return (
     <div className="App">
       <div className="container px-5 pb-12 mx-auto">
@@ -19,7 +26,7 @@ function App() {
 
             <div className="relative flex-grow w-full">
               <label htmlFor="account" className="leading-7 text-sm text-gray-600">Account Name</label>
-              <input type="text" id="account" name="account"
+              <input type="text" id="account" name="account" value={fields.account} onChange={handleFieldChange}
                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
             </div>
             <button
@@ -53,7 +60,7 @@ function App() {
               className="w-full sm:w-auto sm:ml-5 mt-3 whitespace-nowrap text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Update
             </button>
 
-            <textarea className="mt-3 w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+            <textarea value={fields.textarea} id="textarea" onChange={handleFieldChange} className="mt-3 w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
                       rows={4}></textarea>
 
           </div>
