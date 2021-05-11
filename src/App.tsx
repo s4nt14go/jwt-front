@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Header from "./components/Header";
 import styles from "./App.module.css";
@@ -10,6 +10,10 @@ function App() {
     account: 'account',
     textarea: 'textarea',
   });
+  const [includeToken, setIncludeToken] = useState(false);
+  function toggleIncludeToken() {
+    setIncludeToken(!includeToken);
+  }
 
   return (
     <div className="App">
@@ -50,7 +54,7 @@ function App() {
 
           <div className='mt-12 text-left'>
             <div className="flex items-center">
-              <input type="checkbox" id="token-checkbox" className="h-4 w-4 text-gray-700 border rounded mr-2" />
+              <input type="checkbox" checked={includeToken} onChange={toggleIncludeToken} className="h-4 w-4 text-gray-700 border rounded mr-2" />
               <label htmlFor="token-checkbox">Include Token in Auth Header</label>
             </div>
             <button
