@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from "./components/Header";
+import styles from "./App.module.css";
 
 function App() {
   return (
@@ -9,25 +10,57 @@ function App() {
 
       <Header />
 
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font md:w-5/6 mx-auto">
+
         <div className="container px-5 mx-auto">
+
           <div
             className="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+
             <div className="relative flex-grow w-full">
-              <label htmlFor="full-name" className="leading-7 text-sm text-gray-600">Full Name</label>
-              <input type="text" id="full-name" name="full-name"
-                     className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
-            </div>
-            <div className="relative flex-grow w-full">
-              <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
-              <input type="email" id="email" name="email"
+              <label htmlFor="account" className="leading-7 text-sm text-gray-600">Account Name</label>
+              <input type="text" id="account" name="account"
                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
             </div>
             <button
-              className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button
+              className="w-full sm:w-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create
             </button>
           </div>
+
+          <hr className={`${styles.hr1} my-6`}/>
+
+          <div
+            className="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+            <button
+              className="w-full sm:w-auto whitespace-nowrap text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Get Token
+            </button>
+            <div className="relative flex-grow w-full">
+              <label htmlFor="token" className="leading-7 text-sm text-gray-600">Token</label>
+              <input type="text" id="token" name="token"
+                     className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+            </div>
+          </div>
+
+          <div className='mt-12 text-left'>
+            <div className="flex items-center">
+              <input type="checkbox" id="token-checkbox" className="h-4 w-4 text-gray-700 border rounded mr-2" />
+              <label htmlFor="token-checkbox">Include Token in Auth Header</label>
+            </div>
+            <button
+              className="w-full sm:w-auto mt-3 whitespace-nowrap text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Read Account
+            </button>
+            <button
+              className="w-full sm:w-auto sm:ml-5 mt-3 whitespace-nowrap text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Update
+            </button>
+
+            <textarea className="mt-3 w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+                      rows={4}></textarea>
+
+          </div>
+
+
         </div>
+
       </section>
       </div>
     </div>
