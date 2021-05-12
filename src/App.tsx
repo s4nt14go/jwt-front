@@ -156,7 +156,7 @@ function App() {
           <div
             className="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
             <button onClick={get}
-              className="w-full sm:w-auto whitespace-nowrap text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Get Token
+              className={`${!fields.account? 'opacity-50 cursor-not-allowed' : ''} w-full sm:w-auto whitespace-nowrap text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg`}>Get Token
             </button>
             <div className="relative flex-grow w-full">
               <label htmlFor="token" className="leading-7 text-sm text-gray-600">Token</label>
