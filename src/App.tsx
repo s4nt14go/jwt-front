@@ -64,6 +64,7 @@ function App() {
 
   let cancelPromise = false;
   function read() {
+    handleFieldChange({target: {id: 'textarea', value: ''}});
     cancelPromise = false;
     fetch(`${config.API_URL}/read-account`, {
       method: 'GET',
@@ -74,7 +75,7 @@ function App() {
       .then(response => {
         console.log('response', response);
         if (response.status === 401) {
-          NotificationRef.current.start('Unauthorized: token is invalid or has expired', Severity.ERROR);
+          NotificationRef.current.start(`Unauthorized: token is invalid or has expired${!includeToken? " - also take into account you didn't use the checkbox to include it in header :)": ''}`, Severity.ERROR);
           cancelPromise = true;
         }
         return response.json();
@@ -110,7 +111,7 @@ function App() {
       .then(response => {
         console.log('response', response);
         if (response.status === 401) {
-          NotificationRef.current.start('Unauthorized: token is invalid or has expired', Severity.ERROR);
+          NotificationRef.current.start(`Unauthorized: token is invalid or has expired${!includeToken? " - also take into account you didn't use the checkbox to include it in header :)": ''}`, Severity.ERROR);
           cancelPromise = true;
         }
         return response.json();

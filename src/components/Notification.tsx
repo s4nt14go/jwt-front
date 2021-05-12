@@ -19,7 +19,7 @@ const Notification = function Notification(_:any, ref:any) {
       })
       api.start({ to: [
           { opacity: 1 },
-          { opacity: 0, delay: 2000 },
+          { opacity: 0, delay: 5000 },
         ] })
     }
   }));
