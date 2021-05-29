@@ -167,7 +167,7 @@ function App() {
 
           <div className='mt-12 text-left'>
             <div className="flex items-center">
-              <input type="checkbox" checked={includeToken} onChange={toggleIncludeToken} disabled={!fields.token} className="h-4 w-4 text-gray-700 border rounded mr-2" />
+              <input id="token-checkbox" type="checkbox" checked={includeToken} onChange={toggleIncludeToken} disabled={!fields.token} className="h-4 w-4 text-gray-700 border rounded mr-2" />
               <label htmlFor="token-checkbox">Include token in Authorization Header</label>
             </div>
             <button onClick={read}
