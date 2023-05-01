@@ -22,11 +22,11 @@ Check what you get when reading or updating the account data while checking/unch
 
 # Demo
 
-[Click here](https://prod--jwt-s4nt14go.netlify.app) to check the demo!
+[Click here](https://jwt-s4nt14go.netlify.app) to check the demo!
 
 <br />
 <p align="center">
-    <a href="https://prod--jwt-s4nt14go.netlify.app">
+    <a href="https://jwt-s4nt14go.netlify.app">
         <img src="doc/screenshot.png" />
     </a>
 </p>
@@ -40,3 +40,39 @@ Check what you get when reading or updating the account data while checking/unch
 # Backend
 
 In [this repo](https://github.com/s4nt14go/jwt-back) you can take a look at the backend
+
+# Instructions
+
+1. After deploying the backend, you'll get the api url. So, to run React locally you'll have to set it through an environment variable. In the [config.ts](src/config.ts) we expect to work with `dev` and `prod` backend stages, as an example let's say we want to run the app against the `prod` stage, create an `.env` file with these env vars:
+
+    ```dotenv
+    REACT_APP_STAGE=prod
+    REACT_APP_prod_API_URL=https://<your backend prod data>.execute-api.us-east-1.amazonaws.com/prod
+    ```
+
+1. Install dependencies
+
+    ```shell script
+    npm ci
+    ```
+
+1. Use Node 14 version, using [nvm](https://github.com/nvm-sh/nvm) you can:
+
+    ```
+    # set Node 14 in current terminal
+    nvm use 14
+    # set Node 14 as default (new terminals will use 14)
+    nvm alias default 14
+    ```
+
+1. Install dependencies
+
+    ```shell script
+    npm ci
+    ```
+   
+1. Run locally
+
+    ```shell script
+    npm start
+    ```

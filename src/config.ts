@@ -1,5 +1,5 @@
 const configs: any = {
-  "dev": {
+  dev: {
     API_URL: process.env.REACT_APP_dev_API_URL,
   },
   prod: {
