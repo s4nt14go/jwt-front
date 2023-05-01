@@ -1,5 +1,5 @@
 # JWT Serverless Authentication
-<a href="https://github.com/s4nt14go/jwt-front">
+<a href="https://app.netlify.com/sites/jwt-s4nt14go/deploys">
   <img src="https://api.netlify.com/api/v1/badges/d5c87557-c412-4598-b759-5fc7bb845c77/deploy-status" />
 </a><br /><br />
 
